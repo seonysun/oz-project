@@ -24,3 +24,6 @@ export { default as Instagram } from './Instagram.svg';
 export { default as Arrow } from './Arrow.svg';
 export { default as Arrowdown } from './ArrowDown.svg';
 export { default as ArrowdownWhite } from './ArrowDownWhite.svg';
+/* input */
+export { default as FilterIcon } from './Filter.svg';
+export { default as ChevronDown } from './ChevronDown.svg';
