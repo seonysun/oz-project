@@ -15,3 +15,8 @@ export { default as SmartWatches } from './SmartWatches.svg';
 export { default as Cameras } from './Cameras.svg';
 export { default as Headphones } from './Headphones.svg';
 export { default as Gaming } from './Gaming.svg';
+/* socialIcons */
+export { default as Twitter } from './Twitter.svg';
+export { default as FaceBook } from './Facebook.svg';
+export { default as Tiktok } from './Tiktok.svg';
+export { default as Instagram } from './Instagram.svg';
