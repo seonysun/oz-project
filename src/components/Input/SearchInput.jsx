@@ -3,6 +3,7 @@ import { Search } from '../../assets/icons/index';
 
 function SearchInput() {
   const [inputValue, setInputValue] = useState('');
+
   const searchSubmit = (e) => {
     e.preventDefault();
     if (!inputValue.trim) return;
@@ -10,9 +11,9 @@ function SearchInput() {
   };
 
   return (
-    <div className="mx-10 sm:grow">
+    <div className="sm:mx-10 sm:grow">
       <form
-        className="flex h-[40px] w-[280px] items-center gap-2 rounded-lg bg-[#F5F5F5] px-4 opacity-0 sm:opacity-100 md:h-[56px]"
+        className="flex h-[40px] max-w-[310px] items-center gap-2 rounded-lg bg-[#F5F5F5] px-4 opacity-0 sm:opacity-100 md:h-[56px]"
         onSubmit={searchSubmit}
       >
         <button type="submit">
