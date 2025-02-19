@@ -30,10 +30,14 @@ function Footer() {
   ];
 
   return (
-    <footer className="flex h-[744px] flex-col items-center gap-10 bg-[#181313] px-[10vw] py-12 text-white md:h-[464px] md:items-start md:gap-6 md:px-[80px] md:py-[104px] xl:px-[160px]">
-      <section className="flex w-full flex-col items-center justify-between gap-8 text-center text-[13px] font-light text-[#cfcfcf] md:h-[273px] md:flex-row md:items-start md:text-left">
-        <div className="flex max-w-[384px] flex-col items-center gap-4">
-          <img src={LogoWhite} alt="logo" />
+    <footer className="flex h-[744px] flex-col items-center justify-between bg-[#181313] py-16 md:h-[464px] md:px-[15%] md:py-[104px]">
+      <section className="flex w-full flex-col justify-between gap-8 text-center text-[13px] font-light text-[#cfcfcf] md:flex-row md:text-left">
+        <div className="mx-auto flex max-w-[384px] flex-col gap-4 md:mx-0">
+          <img
+            src={LogoWhite}
+            alt="logo"
+            className="mx-auto h-8 w-24 md:mx-0"
+          />
           <p>
             We are a residential interior design firm located in Portland. Our
             boutique-studio offers more than
@@ -64,7 +68,7 @@ function Footer() {
           divClass="min-w-[210px]"
         />
       </section>
-      <nav className="flex w-[173px] justify-between">
+      <nav className="flex w-[173px] justify-between md:mr-auto">
         {socialIcons.map((icon) => (
           <img key={icon.alt} src={icon.src} alt={icon.alt} />
         ))}
