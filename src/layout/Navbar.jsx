@@ -20,12 +20,15 @@ function Nav() {
 
   return (
     <nav className="hidden md:block">
-      <div className="flex h-[48px] justify-between bg-[#2E2E2E] px-4 md:px-[80px] lg:px-[160px]">
-        {navList.map((nav) => (
-          <Link key={nav.name} to="/" className="flex items-center gap-2">
-            <img src={nav.src} alt={nav.name} className="size-6" />
-            <span className="text-sm text-white">{nav.name}</span>
-          </Link>
+      <div className="flex h-[48px] items-center justify-between bg-[#2E2E2E] text-sm text-white md:px-[80px] lg:px-[160px]">
+        {navList.map((nav, idx) => (
+          <>
+            {idx > 0 && <span>|</span>}
+            <Link key={nav.name} to="/" className="flex items-center gap-1">
+              <img src={nav.src} alt={nav.name} className="size-6" />
+              <span>{nav.name}</span>
+            </Link>
+          </>
         ))}
       </div>
     </nav>
