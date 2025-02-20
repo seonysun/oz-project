@@ -21,7 +21,8 @@ export { default as FaceBook } from './Facebook.svg';
 export { default as Tiktok } from './Tiktok.svg';
 export { default as Instagram } from './Instagram.svg';
 /* arrow */
-export { default as Arrow } from './Arrow.svg';
+export { default as ArrowLeft } from './ArrowLeft.svg';
+export { default as ArrowRight } from './ArrowRight.svg';
 export { default as Arrowdown } from './ArrowDown.svg';
 export { default as ArrowdownWhite } from './ArrowDownWhite.svg';
 /* input */
