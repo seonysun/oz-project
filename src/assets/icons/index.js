@@ -27,3 +27,5 @@ export { default as ArrowdownWhite } from './ArrowDownWhite.svg';
 /* input */
 export { default as FilterIcon } from './Filter.svg';
 export { default as ChevronDown } from './ChevronDown.svg';
+/* card */
+export { default as PhonesB } from './PhonesB.svg';
