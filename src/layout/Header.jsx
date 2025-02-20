@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <header className="flex h-[64px] items-center justify-between border px-4 md:h-[88px] md:px-[80px] lg:px-[160px]">
+      <header className="flex h-[64px] items-center justify-between border px-4 sm:h-[88px] sm:px-[10%]">
         <Link to="/">
           <img src={LogoBlack} alt="logo" />
         </Link>

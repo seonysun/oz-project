@@ -20,3 +20,15 @@ export { default as Twitter } from './Twitter.svg';
 export { default as FaceBook } from './Facebook.svg';
 export { default as Tiktok } from './Tiktok.svg';
 export { default as Instagram } from './Instagram.svg';
+/* arrow */
+export { default as ArrowLeft } from './ArrowLeft.svg';
+export { default as ArrowRight } from './ArrowRight.svg';
+export { default as Arrowdown } from './ArrowDown.svg';
+export { default as ArrowdownWhite } from './ArrowDownWhite.svg';
+/* input */
+export { default as FilterIcon } from './Filter.svg';
+export { default as ChevronDown } from './ChevronDown.svg';
+/* card */
+export { default as PhonesB } from './PhonesB.svg';
+export { default as Like } from './Like.svg';
+export { default as LikeRed } from './LikeRed.svg';
