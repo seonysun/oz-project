@@ -30,3 +30,5 @@ export { default as FilterIcon } from './Filter.svg';
 export { default as ChevronDown } from './ChevronDown.svg';
 /* card */
 export { default as PhonesB } from './PhonesB.svg';
+export { default as Like } from './Like.svg';
+export { default as LikeRed } from './LikeRed.svg';
