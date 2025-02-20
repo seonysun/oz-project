@@ -21,7 +21,7 @@ function Nav() {
 
   return (
     <nav className="hidden md:block">
-      <div className="flex h-[48px] items-center justify-between bg-[#2E2E2E] text-sm text-white md:px-[80px] lg:px-[160px]">
+      <div className="flex h-[48px] items-center justify-between bg-[#2E2E2E] text-sm text-white md:px-[10%]">
         {navList.map((nav, idx) => (
           <React.Fragment key={nav.name}>
             {idx > 0 && <span>|</span>}

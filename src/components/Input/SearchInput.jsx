@@ -13,7 +13,7 @@ function SearchInput() {
   return (
     <div className="sm:mx-10 sm:grow">
       <form
-        className="flex h-[40px] max-w-[310px] items-center gap-2 rounded-lg bg-[#F5F5F5] px-4 opacity-0 sm:opacity-100 md:h-[56px]"
+        className="flex h-[56px] max-w-[310px] items-center gap-2 rounded-lg bg-[#F5F5F5] px-4 opacity-0 sm:opacity-100"
         onSubmit={searchSubmit}
       >
         <button type="submit">
