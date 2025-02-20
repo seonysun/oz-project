@@ -4,7 +4,7 @@ import {
   Macbook,
   Playstation,
   Vision,
-} from '../../assets/images/mobile/index';
+} from '../../assets/images/mobile';
 
 function MobileBanner() {
   return (

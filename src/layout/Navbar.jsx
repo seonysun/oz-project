@@ -7,7 +7,7 @@ import {
   Cameras,
   Headphones,
   Gaming,
-} from '../assets/icons/index';
+} from '../assets/icons';
 
 function Nav() {
   const navList = [

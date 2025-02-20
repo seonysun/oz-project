@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import { LogoBlack, Favorite, Cart, User, Burger } from '../assets/icons/index';
+import { LogoBlack, Favorite, Cart, User, Burger } from '../assets/icons';
 import SearchInput from '../components/Input/SearchInput';
 
 function Header() {

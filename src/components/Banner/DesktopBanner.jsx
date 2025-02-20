@@ -4,7 +4,7 @@ import {
   Macbook,
   Playstation,
   Vision,
-} from '../../assets/images/desktop/index';
+} from '../../assets/images/desktop';
 
 function DesktopBanner() {
   return (
