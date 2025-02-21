@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { Iphone14 } from '../../assets/images/cards';
 import ProductCard from '../../components/Card/ProductCard';
 
@@ -52,13 +53,15 @@ function Products() {
     <section className="flex flex-col px-2 py-12 sm:px-[8%] md:px-[60px]">
       <ul className="mb-6 flex gap-4 pl-[3.5%]">
         {menuList.map((menu) => (
-          <li className="font-medium text-[#8B8B8B] sm:text-lg">{menu}</li>
+          <li key={menu} className="font-medium text-[#8B8B8B] sm:text-lg">
+            {menu}
+          </li>
         ))}
       </ul>
       <div className="flex flex-wrap items-center justify-center gap-6">
-        {productList.map((item) => (
+        {productList.map((item, idx) => (
           <ProductCard
-            key={item.name}
+            key={idx}
             src={item.src}
             name={item.name}
             detail={item.detail}
