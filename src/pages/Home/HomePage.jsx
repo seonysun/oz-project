@@ -1,6 +1,7 @@
 import Banners from './Banners';
 import Categories from './Categories';
 import Products from './Products';
+import SaleBanner from './SaleBanner';
 
 function HomePage() {
   return (
@@ -8,6 +9,7 @@ function HomePage() {
       <Banners />
       <Categories />
       <Products />
+      <SaleBanner />
     </>
   );
 }
