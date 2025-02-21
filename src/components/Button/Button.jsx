@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Arrowdown, ArrowdownWhite } from '../../assets/icons/index';
 
 function Button({ color = 'black', size = 'large', icon = false, text }) {

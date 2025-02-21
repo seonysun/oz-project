@@ -25,6 +25,7 @@
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-unused-vars": "error",
     "no-multiple-empty-lines": "error",

@@ -1,6 +1,5 @@
-export { default as Airpods } from './airpods.png';
-export { default as Iphone } from './iphone.png';
-export { default as Macbook } from './macbook.png';
-export { default as Playstation } from './playstation.png';
-export { default as Vision } from './vision.png';
-export { default as Sale } from './sale.png';
+export { default as DAirpods } from './airpods.png';
+export { default as DIphone } from './iphone.png';
+export { default as DMacbook } from './macbook.png';
+export { default as DPlaystation } from './playstation.png';
+export { default as DVision } from './vision.png';
