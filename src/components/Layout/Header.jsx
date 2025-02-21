@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import { LogoBlack, Favorite, Cart, User, Burger } from '../assets/icons';
-import SearchInput from '../components/Input/SearchInput';
+import { LogoBlack, Favorite, Cart, User, Burger } from '../../assets/icons';
+import SearchInput from '../Input/SearchInput';
 
 function Header() {
   const userIcons = [

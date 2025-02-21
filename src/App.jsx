@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Footer from './layout/Footer';
-import Header from './layout/Header';
-import Homepage from './pages/HomePage';
-import Listpage from './pages/ItemListPage';
+import Footer from './components/Layout/Footer';
+import Header from './components/Layout/Header';
+import Homepage from './pages/Home/HomePage';
+import Listpage from './pages/ItemList/ItemListPage';
 
 function App() {
   return (

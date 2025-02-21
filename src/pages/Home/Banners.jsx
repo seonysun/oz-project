@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import DesktopBanner from '../components/Banner/DesktopBanner';
-import MobileBanner from '../components/Banner/MobileBanner';
+import DesktopBanner from '../../components/Banner/DesktopBanner';
+import MobileBanner from '../../components/Banner/MobileBanner';
 
 function Banners() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 640);

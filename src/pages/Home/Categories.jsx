@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
-import { ArrowLeft, ArrowRight, PhonesB } from '../assets/icons';
-import CategoryCard from '../components/Card/CategoryCard';
+import { ArrowLeft, ArrowRight, PhonesB } from '../../assets/icons';
+import CategoryCard from '../../components/Card/CategoryCard';
 
 function Categories() {
   const categoryCardList = [

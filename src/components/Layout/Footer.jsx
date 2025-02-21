@@ -5,7 +5,7 @@ import {
   FaceBook,
   Tiktok,
   Instagram,
-} from '../assets/icons';
+} from '../../assets/icons';
 
 function FooterList({ title, items, divClass }) {
   return (
