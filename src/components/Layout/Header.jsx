@@ -16,14 +16,18 @@ function Header() {
         <Link to="/">
           <img src={LogoBlack} alt="logo" />
         </Link>
-        <SearchInput />
+        <div className="sm:mx-10 sm:grow">
+          <SearchInput size="h-[56px] max-w-[310px]" />
+        </div>
         <button className="sm:hidden" type="button">
           <img src={Burger} alt="menu" />
         </button>
         <nav className="hidden sm:block">
           <div className="flex gap-4">
             {userIcons.map((icon) => (
-              <img key={icon.alt} src={icon.src} alt={icon.alt} />
+              <button type="button" key={icon.alt}>
+                <img src={icon.src} alt={icon.alt} />
+              </button>
             ))}
           </div>
         </nav>

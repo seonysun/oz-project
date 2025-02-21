@@ -1,13 +1,7 @@
 import { Like, LikeRed } from '../../assets/icons';
 import Button from '../Button/Button';
 
-function ProductCard({
-  src,
-  name = 'product',
-  detail = 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-  price = '$1399',
-  like = false,
-}) {
+function ProductCard({ src, name, detail, price, like = false }) {
   return (
     <div className="flex h-[352px] w-[163.5px] flex-col items-center justify-between rounded-lg bg-[#F6F6F6] px-3 py-6 sm:h-[432px] sm:w-[268px]">
       <div className="flex w-full justify-end">
