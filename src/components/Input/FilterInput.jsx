@@ -1,4 +1,4 @@
-import { FilterIcon } from '../../assets/icons/index';
+import { FilterIcon } from '../../assets/icons';
 
 function FilterInput() {
   return (

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/no-array-index-key */
 import {
   LogoWhite,
@@ -6,7 +5,7 @@ import {
   FaceBook,
   Tiktok,
   Instagram,
-} from '../assets/icons/index';
+} from '../../assets/icons';
 
 function FooterList({ title, items, divClass }) {
   return (

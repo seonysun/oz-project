@@ -1,4 +1,4 @@
-import { ChevronDown } from '../../assets/icons/index';
+import { ChevronDown } from '../../assets/icons';
 
 function DropdownInput() {
   return (

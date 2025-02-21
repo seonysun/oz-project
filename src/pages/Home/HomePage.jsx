@@ -1,6 +1,6 @@
-import Banners from '../layout/Banners';
-import Categories from '../layout/Categories';
-import Products from '../layout/Products';
+import Banners from './Banners';
+import Categories from './Categories';
+import Products from './Products';
 
 function HomePage() {
   return (

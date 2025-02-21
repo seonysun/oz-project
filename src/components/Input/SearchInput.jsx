@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search } from '../../assets/icons/index';
+import { Search } from '../../assets/icons';
 
 function SearchInput() {
   const [inputValue, setInputValue] = useState('');

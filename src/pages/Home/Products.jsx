@@ -1,5 +1,5 @@
-import { Iphone14 } from '../assets/images/cards';
-import ProductCard from '../components/Card/ProductCard';
+import { Iphone14 } from '../../assets/images/cards';
+import ProductCard from '../../components/Card/ProductCard';
 
 function Products() {
   const menuList = ['New Arrival', 'Bestseller', 'Featured Product'];
