@@ -23,7 +23,7 @@ function ProductCard({ src, name, detail, price, like = false }) {
         <p className="line-clamp-2">{detail}</p>
         <span className="text-2xl font-semibold">{price}</span>
       </div>
-      <Button text="Buy Now" />
+      <Button text="Buy Now" customSize="w-[70%] h-[48px] rounded-md" />
     </div>
   );
 }
