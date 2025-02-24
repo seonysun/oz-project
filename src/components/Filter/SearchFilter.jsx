@@ -1,23 +1,7 @@
 import { useState } from 'react';
 import { ExpandLess, ExpandMore } from '../../assets/icons';
-import Checkbox from '../Checkbox/Checkbox';
+import Checkboxes from '../Checkbox/Checkboxes';
 import SearchInput from '../Input/SearchInput';
-
-function Checkboxes({ items, checkedList, updateCheckedList }) {
-  return (
-    <ul>
-      {items.map((item) => (
-        <li key={item.id} className="mb-1">
-          <Checkbox
-            item={item}
-            checked={checkedList.includes(item.name)}
-            onChange={() => updateCheckedList(item.name)}
-          />
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 function SearchFilter({ filterItem, firstFilter }) {
   const [isOpen, setIsOpen] = useState(firstFilter);
