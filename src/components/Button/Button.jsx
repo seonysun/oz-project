@@ -1,16 +1,22 @@
 import { Arrowdown, ArrowdownWhite } from '../../assets/icons/index';
 
-function Button({ color = 'black', size = 'large', icon = false, text }) {
+function Button({
+  color = 'black',
+  size = 'high',
+  icon = false,
+  text = 'Button',
+  customSize = '',
+}) {
   const colorList = {
     black: 'bg-black text-white',
     whiteText: 'border border-white text-white',
     blackText: 'border border-black text-black',
   };
   const sizeList = {
-    large: icon
+    high: icon
       ? 'h-[56px] w-[182px] rounded-md'
       : 'h-[56px] w-[150px] rounded-md',
-    small: icon
+    low: icon
       ? 'h-[48px] w-[178px] rounded-lg'
       : 'h-[48px] w-[162px] rounded-lg',
   };
@@ -18,7 +24,7 @@ function Button({ color = 'black', size = 'large', icon = false, text }) {
   return (
     <button
       type="button"
-      className={`flex items-center justify-around ${colorList[color]} ${sizeList[size]}`}
+      className={`flex items-center justify-around ${colorList[color]} ${customSize || sizeList[size]}`}
     >
       {text}
       {icon && (
