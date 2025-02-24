@@ -1,8 +1,7 @@
 import { Iphone14 } from '../../assets/images/cards';
 import ProductCard from '../../components/Card/ProductCard';
 
-function Products() {
-  const menuList = ['New Arrival', 'Bestseller', 'Featured Product'];
+function ListProducts() {
   const productList = [
     {
       src: Iphone14,
@@ -49,28 +48,19 @@ function Products() {
   ];
 
   return (
-    <section className="flex flex-col px-2 py-12 sm:px-[8%] md:px-[60px]">
-      <ul className="mb-6 flex gap-4 pl-[3.5%]">
-        {menuList.map((menu) => (
-          <li key={menu} className="font-medium text-[#8B8B8B] sm:text-lg">
-            {menu}
-          </li>
-        ))}
-      </ul>
-      <div className="flex flex-wrap justify-center gap-6">
-        {productList.map((item) => (
-          <ProductCard
-            key={item.name}
-            src={item.src}
-            name={item.name}
-            detail={item.detail}
-            price={item.price}
-            like={item.like}
-          />
-        ))}
-      </div>
-    </section>
+    <div className="my-6 flex flex-wrap justify-center gap-2.5">
+      {productList.map((item) => (
+        <ProductCard
+          key={item.name}
+          src={item.src}
+          name={item.name}
+          detail={item.detail}
+          price={item.price}
+          like={item.like}
+        />
+      ))}
+    </div>
   );
 }
 
-export default Products;
+export default ListProducts;

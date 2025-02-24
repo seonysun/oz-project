@@ -25,7 +25,10 @@ function Nav() {
         {navList.map((nav, idx) => (
           <React.Fragment key={nav.name}>
             {idx > 0 && <span>|</span>}
-            <Link to="/list" className="flex items-center gap-1">
+            <Link
+              to={`/list/${nav.name.toLowerCase()}`}
+              className="flex items-center gap-1"
+            >
               <img src={nav.src} alt={nav.name} className="size-6" />
               <span>{nav.name}</span>
             </Link>
