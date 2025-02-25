@@ -27,32 +27,30 @@ function ItemListPage() {
 
   return (
     <div className="my-4 flex-col items-center space-y-4 sm:px-[10%]">
-      <div className="flex items-center gap-5 p-3 text-[#a2a1a1]">
+      <nav className="flex items-center gap-5 p-3 text-[#a2a1a1]">
         <span>Home</span>
         <img src={ArrowLeft} alt="arrow" className="size-4" />
         <span>Catalog</span>
         <img src={ArrowLeft} alt="arrow" className="size-4" />
         <span className="text-black">{category}</span>
-      </div>
+      </nav>
       <div className="flex gap-4">
-        <div className="flex flex-col gap-2">
+        <ul>
           {filterItemList.map((filterItem, idx) => (
-            <SearchFilter
-              key={filterItem.title}
-              filterItem={filterItem}
-              firstFilter={idx === 0}
-            />
+            <li key={filterItem.title}>
+              <SearchFilter filterItem={filterItem} firstFilter={idx === 0} />
+            </li>
           ))}
-        </div>
-        <div className="grow">
+        </ul>
+        <section className="flex-1">
           <div className="flex items-center justify-between">
-            <div className="text-[#a2a1a1]">
+            <p className="text-[#a2a1a1]">
               Selected Products : <span className="text-black">85</span>
-            </div>
+            </p>
             <DropdownInput text="By rating" />
           </div>
           <ListProducts />
-        </div>
+        </section>
       </div>
     </div>
   );

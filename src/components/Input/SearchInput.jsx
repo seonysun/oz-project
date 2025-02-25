@@ -6,7 +6,7 @@ function SearchInput({ size }) {
 
   const searchSubmit = (e) => {
     e.preventDefault();
-    if (!inputValue.trim) return;
+    if (!inputValue.trim()) return;
     setInputValue('');
   };
 

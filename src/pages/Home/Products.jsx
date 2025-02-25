@@ -1,73 +1,61 @@
-import { Iphone14 } from '../../assets/images/cards';
+import { useState } from 'react';
 import ProductCard from '../../components/Card/ProductCard';
+import useFetch from '../../utils/hooks/useFetch';
+
+const menuList = [
+  { name: 'New Arrival', id: 5 },
+  { name: 'Bestseller', id: 2 },
+  { name: 'Featured Product', id: 3 },
+];
+
+const getUrl = (menu) => {
+  const category = menuList.find((el) => el.name === menu);
+  return category
+    ? `https://api.escuelajs.co/api/v1/categories/${category.id}/products`
+    : null;
+};
+
+function MenuTabs({ selectedMenu, setSelectedMenu }) {
+  return (
+    <ul className="mb-6 flex gap-7 pl-[3.5%]">
+      {menuList.map((menu) => (
+        <li key={menu.id}>
+          <button
+            type="button"
+            onClick={() => setSelectedMenu(menu.name)}
+            className={` ${selectedMenu === menu.name ? 'font-bold text-black' : 'font-medium text-[#8B8B8B]'} sm:text-lg`}
+          >
+            {menu.name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Products() {
-  const menuList = ['New Arrival', 'Bestseller', 'Featured Product'];
-  const productList = [
-    {
-      src: Iphone14,
-      name: 'product1',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-    {
-      src: Iphone14,
-      name: 'product2',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product3',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-    {
-      src: Iphone14,
-      name: 'product4',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product5',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product6',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-  ];
+  const [selectedMenu, setSelectedMenu] = useState(menuList[0].name);
+  const url = getUrl(selectedMenu);
+  const { data = [] } = useFetch(url, { limit: 8, offset: 0 });
 
   return (
     <section className="flex flex-col px-2 py-12 sm:px-[8%] md:px-[60px]">
-      <ul className="mb-6 flex gap-4 pl-[3.5%]">
-        {menuList.map((menu) => (
-          <li key={menu} className="font-medium text-[#8B8B8B] sm:text-lg">
-            {menu}
-          </li>
-        ))}
-      </ul>
+      <MenuTabs selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
       <div className="flex flex-wrap justify-center gap-6">
-        {productList.map((item) => (
-          <ProductCard
-            key={item.name}
-            src={item.src}
-            name={item.name}
-            detail={item.detail}
-            price={item.price}
-            like={item.like}
-          />
-        ))}
+        {data ? (
+          data.map((item) => (
+            <ProductCard
+              key={item.id}
+              src={item.images}
+              name={item.title}
+              detail={item.description}
+              price={item.price}
+              like={item.like}
+            />
+          ))
+        ) : (
+          <p className="w-full text-center text-gray-500">상품이 없습니다.</p>
+        )}
       </div>
     </section>
   );

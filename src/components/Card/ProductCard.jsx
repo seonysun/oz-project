@@ -21,7 +21,7 @@ function ProductCard({ src, name, detail, price, like = false }) {
       <img src={src} alt={name} className="size-28 sm:size-44" />
       <div className="flex h-[88px] w-[139.5px] flex-col justify-between text-center sm:w-[236px]">
         <p className="line-clamp-2">{detail}</p>
-        <span className="text-2xl font-semibold">{price}</span>
+        <span className="max-w-full truncate text-2xl font-semibold">{`$${price.toLocaleString()}`}</span>
       </div>
       <Button text="Buy Now" customSize="w-[70%] h-[48px] rounded-md" />
     </div>
