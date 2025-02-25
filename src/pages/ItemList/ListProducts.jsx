@@ -1,64 +1,26 @@
-import { Iphone14 } from '../../assets/images/cards';
 import ProductCard from '../../components/Card/ProductCard';
+import useFetch from '../../utils/hooks/useFetch';
 
 function ListProducts() {
-  const productList = [
-    {
-      src: Iphone14,
-      name: 'product1',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-    {
-      src: Iphone14,
-      name: 'product2',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product3',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-    {
-      src: Iphone14,
-      name: 'product4',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product5',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: true,
-    },
-    {
-      src: Iphone14,
-      name: 'product6',
-      detail: 'Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)',
-      price: '$1399',
-      like: false,
-    },
-  ];
+  const url = 'https://api.escuelajs.co/api/v1/categories/4/products';
+  const { data = [] } = useFetch(url, { limit: 12, offset: 0 });
 
   return (
     <div className="my-6 flex flex-wrap justify-center gap-2.5">
-      {productList.map((item) => (
-        <ProductCard
-          key={item.name}
-          src={item.src}
-          name={item.name}
-          detail={item.detail}
-          price={item.price}
-          like={item.like}
-        />
-      ))}
+      {data ? (
+        data.map((item) => (
+          <ProductCard
+            key={item.id}
+            src={item.images}
+            name={item.title}
+            detail={item.description}
+            price={item.price}
+            like={item.like}
+          />
+        ))
+      ) : (
+        <p className="w-full text-center text-gray-500">상품이 없습니다.</p>
+      )}
     </div>
   );
 }
