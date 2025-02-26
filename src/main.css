@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-family: 'Noto Sans KR', serif;
+/* noto-sans-kr - korean */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url('/fonts/NotoSans-Light.woff2') format('woff2'),
+    url('/fonts/NotoSans-Light.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('/fonts/NotoSans-Regular.woff2') format('woff2'),
+    url('/fonts/NotoSans-Regular.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('/fonts/NotoSans-Medium.woff2') format('woff2'),
+    url('/fonts/NotoSans-Medium.woff') format('woff');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('/fonts/NotoSans-Bold.woff2') format('woff2'),
+    url('/fonts/NotoSans-Bold.woff') format('woff');
 }
