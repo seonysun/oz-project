@@ -32,7 +32,7 @@ function Categories() {
       </div>
       <div className="flex flex-wrap justify-center gap-6">
         {updatedList().map((card, idx) => (
-          <CategoryCard key={idx} src={card.src} name={card.name} />
+          <CategoryCard key={idx} card={card} />
         ))}
       </div>
     </section>
