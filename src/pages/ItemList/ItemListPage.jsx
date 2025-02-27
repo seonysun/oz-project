@@ -3,7 +3,7 @@ import { ArrowLeft } from '../../assets/icons';
 import ProductCards from '../../components/Card/ProductCards';
 import SearchFilter from '../../components/Filter/SearchFilter';
 import DropdownInput from '../../components/Input/DropdownInput';
-import useFetch from '../../utils/hooks/useFetch';
+import useData from '../../hooks/useData';
 
 const CATEGORY_MAP = {
   phones: 1,
@@ -52,10 +52,8 @@ function MenuTabs({ category }) {
 
 function ItemListPage() {
   const { category } = useParams();
-  const url = category
-    ? `https://api.escuelajs.co/api/v1/categories/${CATEGORY_MAP[category]}/products`
-    : null;
-  const { data = [], loading } = useFetch(url, { limit: 12, offset: 0 });
+  const url = category ? `categories/${CATEGORY_MAP[category]}/products` : null;
+  const { data = [], loading } = useData(url, { limit: 12, offset: 0 });
 
   return (
     <div className="my-4 space-y-4 sm:px-[10%]">
@@ -76,7 +74,7 @@ function ItemListPage() {
             </p>
             <DropdownInput text="By rating" />
           </div>
-          {loading ? <p>로딩중...</p> : <ProductCards productList={data} />}
+          <ProductCards data={data} loading={loading} />
         </section>
       </div>
     </div>

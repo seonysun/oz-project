@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../constants/StrAPI';
 
-const useFetch = (url, params = {}) => {
+const useData = (url, params = {}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function getData() {
       setLoading(true);
+
       try {
-        const response = await axios.get(url, { params });
+        const response = await axios.get(API_URL + url, { params });
         setData(response.data);
+        console.log(data);
       } catch (err) {
-        setError(err);
+        console.error(err);
       } finally {
         setLoading(false);
       }
-    };
+    }
 
-    fetchData();
+    getData();
   }, [url, JSON.stringify(params)]);
 
-  return { data, loading, error };
+  return { data, loading };
 };
 
-export default useFetch;
+export default useData;
