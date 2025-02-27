@@ -1,20 +1,25 @@
 /* eslint-disable react/no-array-index-key */
 import { ArrowLeft, ArrowRight, PhonesB } from '../../assets/icons';
 import CategoryCard from '../../components/Card/CategoryCard';
+import { MAX_LIST_LENGTH } from '../../constants/config';
+
+const CATEGORY_LIST = [
+  { src: PhonesB, name: 'phones' },
+  { src: PhonesB, name: 'cameras' },
+  { src: PhonesB, name: 'watches' },
+  { src: PhonesB, name: 'gaming' },
+];
 
 function Categories() {
-  const categoryList = [
-    { src: PhonesB, name: 'phones' },
-    { src: PhonesB, name: 'cameras' },
-    { src: PhonesB, name: 'watches' },
-    { src: PhonesB, name: 'gaming' },
-  ];
   const updatedList = () => {
-    const preparing = Array.from({ length: 6 - categoryList.length }, () => ({
-      src: '',
-      name: '준비중',
-    }));
-    return [...categoryList, ...preparing];
+    const preparing = Array.from(
+      { length: MAX_LIST_LENGTH.HOME.CATEGORY - CATEGORY_LIST.length },
+      () => ({
+        src: '',
+        name: '준비중',
+      }),
+    );
+    return [...CATEGORY_LIST, ...preparing];
   };
 
   return (

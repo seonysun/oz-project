@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { FilterIcon } from '../../assets/icons';
 
-function FilterInput() {
+function FilterInput({ size }) {
   const { category } = useParams();
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function FilterInput() {
       onClick={() => {
         navigate(`/list/${category}/filter`);
       }}
-      className="flex h-[40px] w-[200px] justify-between rounded-lg border border-[#d4d4d4] bg-white px-4 py-2"
+      className={`flex h-[40px] ${size} justify-between rounded-lg border border-[#d4d4d4] bg-white px-4 py-2`}
     >
       <span>filters</span>
       <img src={FilterIcon} alt="filterIcon" />

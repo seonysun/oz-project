@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { API_URL } from '../constants/StrAPI';
+import { API_URL } from '../constants/config';
 
-const useData = (url, params = {}) => {
+const useFetch = (url, params = {}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -29,4 +29,4 @@ const useData = (url, params = {}) => {
   return { data, loading };
 };
 
-export default useData;
+export default useFetch;

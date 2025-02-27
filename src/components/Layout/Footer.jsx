@@ -1,26 +1,13 @@
-/* eslint-disable react/no-array-index-key */
-import {
-  LogoWhite,
-  Twitter,
-  FaceBook,
-  Tiktok,
-  Instagram,
-} from '../../assets/icons';
+import { LogoWhite } from '../../assets/icons';
+import { FOOTER_MENU, SOCIAL_ICONS } from '../../constants/uiData';
 
-const SOCIAL_ICONS = [
-  { src: Twitter, alt: 'Twitter' },
-  { src: FaceBook, alt: 'Facebook' },
-  { src: Tiktok, alt: 'TikTok' },
-  { src: Instagram, alt: 'Instagram' },
-];
-
-function FooterList({ title, items, divClass }) {
+function FooterMenu({ menu, size }) {
   return (
-    <div className={`${divClass}`}>
-      <h5 className="mb-4 text-lg font-medium text-white">{title}</h5>
+    <div className={`${size}`}>
+      <h5 className="mb-4 text-lg font-medium text-white">{menu.title}</h5>
       <ul className="space-y-2">
-        {items.map((item, idx) => (
-          <li key={idx}>{item}</li>
+        {menu.items.map((item) => (
+          <li key={item.id}>{item.name}</li>
         ))}
       </ul>
     </div>
@@ -42,30 +29,9 @@ function Footer() {
             boutique-studio offers more than
           </p>
         </div>
-        <FooterList
-          title="Services"
-          items={[
-            'Bonus program',
-            'Gift cards',
-            'Credit and payment',
-            'Service contracts',
-            'Non-cash account',
-            'payment',
-          ]}
-          divClass="min-w-[130px]"
-        />
-        <FooterList
-          title="Assistance to the buyer"
-          items={[
-            'Find an order',
-            'Terms of delivery',
-            'Exchange and return of goods',
-            'Guarantee',
-            'Frequently asked questions',
-            'Terms of use of the site',
-          ]}
-          divClass="min-w-[210px]"
-        />
+        {FOOTER_MENU.map((menu) => (
+          <FooterMenu key={menu.title} menu={menu} size="min-w-[130px]" />
+        ))}
       </section>
       <nav className="flex w-[173px] justify-between md:mr-auto">
         {SOCIAL_ICONS.map((icon) => (
