@@ -13,7 +13,6 @@ const useData = (url, params = {}) => {
       try {
         const response = await axios.get(API_URL + url, { params });
         setData(response.data);
-        console.log(data);
       } catch (err) {
         console.error(err);
       } finally {
@@ -24,6 +23,9 @@ const useData = (url, params = {}) => {
     getData();
   }, [url, JSON.stringify(params)]);
 
+  useEffect(() => {
+    if (data) console.log(data);
+  }, [data]);
   return { data, loading };
 };
 

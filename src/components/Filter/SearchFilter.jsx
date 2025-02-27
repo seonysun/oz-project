@@ -16,7 +16,7 @@ function SearchFilter({ filterItem, firstFilter }) {
   };
 
   return (
-    <div className="flex w-[256px] flex-col px-2">
+    <div className="flex flex-col px-2">
       <div className="mb-3 flex justify-between border-b py-3">
         <span className="font-medium">{filterItem.title}</span>
         <button
