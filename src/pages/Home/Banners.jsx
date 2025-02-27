@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   DAirpods,
   DIphone,
@@ -13,6 +12,11 @@ import {
   Playstation,
   Vision,
 } from '../../assets/images/mobile';
+import useResize from '../../hooks/useResize';
+
+function Banners() {
+  return useResize() ? <MobileBanner /> : <DesktopBanner />;
+}
 
 function MobileBanner() {
   return (
@@ -46,20 +50,6 @@ function DesktopBanner() {
       </div>
     </section>
   );
-}
-
-function Banners() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return isMobile ? <MobileBanner /> : <DesktopBanner />;
 }
 
 export default Banners;

@@ -3,25 +3,22 @@ import { ArrowLeft, ArrowRight, PhonesB } from '../../assets/icons';
 import CategoryCard from '../../components/Card/CategoryCard';
 
 function Categories() {
-  const categoryCardList = [
+  const categoryList = [
     { src: PhonesB, name: 'phones' },
     { src: PhonesB, name: 'cameras' },
     { src: PhonesB, name: 'watches' },
     { src: PhonesB, name: 'gaming' },
   ];
   const updatedList = () => {
-    const preparing = Array.from(
-      { length: 6 - categoryCardList.length },
-      () => ({
-        src: '',
-        name: '준비중',
-      }),
-    );
-    return [...categoryCardList, ...preparing];
+    const preparing = Array.from({ length: 6 - categoryList.length }, () => ({
+      src: '',
+      name: '준비중',
+    }));
+    return [...categoryList, ...preparing];
   };
 
   return (
-    <section className="bg-[#FAFAFA] px-2 py-12 sm:px-[8%] md:px-[60px]">
+    <section className="bg-[#FAFAFA] px-2 py-12 sm:px-[8%] md:px-[80px]">
       <div className="mb-8 flex items-center justify-between px-[5%]">
         <span className="text-xl font-medium">Browse By Category</span>
         <div className="flex gap-4">
