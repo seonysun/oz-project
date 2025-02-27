@@ -12,7 +12,7 @@ function SearchInput({ size }) {
 
   return (
     <form
-      className={`flex ${size} items-center gap-2 rounded-lg bg-[#F5F5F5] px-4 opacity-0 sm:opacity-100`}
+      className={`flex ${size} items-center gap-2 rounded-lg bg-[#F5F5F5] px-4`}
       onSubmit={searchSubmit}
     >
       <button type="submit">

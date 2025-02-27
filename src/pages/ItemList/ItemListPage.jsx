@@ -3,7 +3,9 @@ import { ArrowLeft } from '../../assets/icons';
 import ProductCards from '../../components/Card/ProductCards';
 import SearchFilter from '../../components/Filter/SearchFilter';
 import DropdownInput from '../../components/Input/DropdownInput';
+import FilterInput from '../../components/Input/FilterInput';
 import useData from '../../hooks/useData';
+import useResize from '../../hooks/useResize';
 
 const CATEGORY_MAP = {
   phones: 1,
@@ -51,27 +53,35 @@ function MenuTabs({ category }) {
 }
 
 function ItemListPage() {
+  const isMobile = useResize();
+
   const { category } = useParams();
   const url = category ? `categories/${CATEGORY_MAP[category]}/products` : null;
   const { data = [], loading } = useData(url, { limit: 12, offset: 0 });
 
   return (
-    <div className="my-4 space-y-4 sm:px-[10%]">
-      <MenuTabs category={category} />
+    <div className="my-4 space-y-4 px-[10%]">
+      {!isMobile && <MenuTabs category={category} />}
       <div className="flex gap-4">
-        <ul>
-          {FILTER_ITEM.map((filterItem, idx) => (
-            <li key={filterItem.title}>
-              <SearchFilter filterItem={filterItem} firstFilter={idx === 0} />
-            </li>
-          ))}
-        </ul>
-        <section className="flex-1">
-          <div className="mb-6 flex items-center justify-between">
-            <p className="text-[#a2a1a1]">
-              Selected Products :{' '}
-              <span className="text-black">{data && data.length}</span>
-            </p>
+        {!isMobile && (
+          <ul>
+            {FILTER_ITEM.map((filterItem, idx) => (
+              <li key={filterItem.title}>
+                <SearchFilter filterItem={filterItem} firstFilter={idx === 0} />
+              </li>
+            ))}
+          </ul>
+        )}
+        <section className="flex w-full">
+          <div className="mb-6 flex justify-between">
+            {isMobile ? (
+              <FilterInput />
+            ) : (
+              <p className="my-auto mb-2 text-[#a2a1a1]">
+                Selected Products :{' '}
+                <span className="text-black">{data && data.length}</span>
+              </p>
+            )}
             <DropdownInput text="By rating" />
           </div>
           <ProductCards data={data} loading={loading} />

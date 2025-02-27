@@ -7,6 +7,13 @@ import {
   Instagram,
 } from '../../assets/icons';
 
+const SOCIAL_ICONS = [
+  { src: Twitter, alt: 'Twitter' },
+  { src: FaceBook, alt: 'Facebook' },
+  { src: Tiktok, alt: 'TikTok' },
+  { src: Instagram, alt: 'Instagram' },
+];
+
 function FooterList({ title, items, divClass }) {
   return (
     <div className={`${divClass}`}>
@@ -21,13 +28,6 @@ function FooterList({ title, items, divClass }) {
 }
 
 function Footer() {
-  const socialIcons = [
-    { src: Twitter, alt: 'Twitter' },
-    { src: FaceBook, alt: 'Facebook' },
-    { src: Tiktok, alt: 'TikTok' },
-    { src: Instagram, alt: 'Instagram' },
-  ];
-
   return (
     <footer className="flex h-[744px] flex-col items-center justify-between bg-[#181313] py-16 md:h-[464px] md:px-[15%] md:py-[104px]">
       <section className="flex w-full flex-col justify-between gap-8 text-center text-[13px] font-light text-[#cfcfcf] md:flex-row md:text-left">
@@ -68,7 +68,7 @@ function Footer() {
         />
       </section>
       <nav className="flex w-[173px] justify-between md:mr-auto">
-        {socialIcons.map((icon) => (
+        {SOCIAL_ICONS.map((icon) => (
           <img key={icon.alt} src={icon.src} alt={icon.alt} />
         ))}
       </nav>
