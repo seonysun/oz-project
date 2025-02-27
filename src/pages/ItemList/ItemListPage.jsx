@@ -72,7 +72,7 @@ function ItemListPage() {
             ))}
           </ul>
         )}
-        <section className="flex w-full">
+        <section className="flex w-full flex-col">
           <div className="mb-6 flex justify-between">
             {isMobile ? (
               <FilterInput />
