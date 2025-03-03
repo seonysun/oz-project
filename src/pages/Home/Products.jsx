@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProductCards from '../../components/Card/ProductCards';
-import useData from '../../hooks/useData';
+import { MAX_LIST_LENGTH } from '../../constants/config';
+import useFetch from '../../hooks/useFetch';
 
 const MENU_ITEMS = [
   { name: 'New Arrival', id: 5 },
@@ -31,7 +32,10 @@ function Products() {
 
   const category = MENU_ITEMS.find((el) => el.name === selectedMenu);
   const url = category ? `categories/${category.id}/products` : null;
-  const { data = [], loading } = useData(url, { limit: 8, offset: 0 });
+  const { data = [], loading } = useFetch(url, {
+    limit: MAX_LIST_LENGTH.HOME.PRODUCTS,
+    offset: 0,
+  });
 
   return (
     <section className="flex flex-col px-2 py-12 sm:px-[8%] md:px-[60px]">

@@ -1,6 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Button from '../../components/Button/Button';
-import useData from '../../hooks/useData';
+import { MAX_LIST_LENGTH } from '../../constants/config';
+import useFetch from '../../hooks/useFetch';
 
 const COLOR_LIST = [
   'bg-[#FFFFFF]',
@@ -28,8 +29,8 @@ function BigCategory({ idx, item }) {
 }
 
 function BigCategories() {
-  const { data = [] } = useData('categories/1/products', {
-    limit: 4,
+  const { data = [] } = useFetch('categories/1/products', {
+    limit: MAX_LIST_LENGTH.HOME.BIG_CATEGORY,
     offset: 0,
   });
   const updatedList = (data ?? []).map((item, idx) => ({

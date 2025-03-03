@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ChevronDown } from '../../assets/icons';
 
-function DropdownInput({ text }) {
+const DROP_LIST = ['1번', '2번', '3번'];
+
+function DropdownInput({ size, text }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(text);
-
-  const dropList = ['1번', '2번', '3번'];
 
   const dropClick = (value) => {
     setSelected(value);
@@ -13,7 +13,7 @@ function DropdownInput({ text }) {
   };
 
   return (
-    <div className="relative flex w-[200px] flex-col text-sm">
+    <div className={`relative flex ${size} flex-col text-sm`}>
       <div className="flex h-[40px] justify-between rounded-lg border border-[#d4d4d4] p-2">
         <span>{selected}</span>
         <button
@@ -26,7 +26,7 @@ function DropdownInput({ text }) {
       </div>
       {isOpen && (
         <ul className="absolute left-0 top-full z-10 flex w-full flex-col rounded-lg border bg-white">
-          {dropList.map((list) => (
+          {DROP_LIST.map((list) => (
             <button type="button" key={list} onClick={() => dropClick(list)}>
               <li className="p-1 hover:bg-slate-100">{list}</li>
             </button>
