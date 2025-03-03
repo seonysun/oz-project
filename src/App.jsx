@@ -1,17 +1,14 @@
-import { Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
-import Homepage from './pages/Home/HomePage';
-import Listpage from './pages/ItemList/ItemListPage';
 
 function App() {
   return (
     <div className="mx-auto w-full max-w-[1440px]">
       <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/list/:category/*" element={<Listpage />} />
-      </Routes>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
