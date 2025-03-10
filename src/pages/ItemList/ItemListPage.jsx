@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from '../../assets/icons';
 import Button from '../../components/Button/Button';
 import ProductCards from '../../components/Card/ProductCards';
@@ -36,6 +36,7 @@ function FilterSidebar({ size }) {
 
 function ItemListPage() {
   const isMobile = useResize();
+  const navigate = useNavigate();
 
   const { category, '*': restPath } = useParams();
   const url = category ? `categories/${CATEGORY_MAP[category]}/products` : null;
@@ -48,7 +49,7 @@ function ItemListPage() {
     return (
       <section className="w-full p-6">
         <div className="mb-4 flex gap-3 text-2xl font-medium">
-          <button type="button">
+          <button type="button" onClick={() => navigate(-1)}>
             <img src={ArrowRight} alt="move before" />
           </button>
           <span>Filters</span>

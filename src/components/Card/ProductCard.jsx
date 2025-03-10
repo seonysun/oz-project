@@ -1,7 +1,11 @@
+import { useDispatch } from 'react-redux';
 import { Like, LikeRed } from '../../assets/icons';
+import { cartSlice } from '../../redux/Slice/cartSlice';
 import Button from '../Button/Button';
 
 function ProductCard({ item, addLike }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="flex h-[352px] w-[163.5px] flex-col items-center justify-between rounded-lg bg-[#F6F6F6] px-3 py-6 md:h-[432px] md:w-[268px]">
       <button
@@ -17,7 +21,11 @@ function ProductCard({ item, addLike }) {
         <p className="line-clamp-2">{item.description}</p>
         <span className="max-w-full truncate text-2xl font-semibold">{`$${item.price.toLocaleString()}`}</span>
       </div>
-      <Button text="Buy Now" customSize="w-[70%] h-[48px] rounded-md" />
+      <Button
+        onClick={() => dispatch(cartSlice.actions.addCart(item))}
+        text="Buy Now"
+        customSize="w-[70%] h-[48px] rounded-md"
+      />
     </div>
   );
 }
