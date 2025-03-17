@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Button from '../../components/Button/Button';
-import { MAX_LIST_LENGTH } from '../../constants/config';
+import { MAX_LIST_LENGTH } from '../../constants/uiData';
 import useFetch from '../../hooks/useFetch';
 
 const COLOR_LIST = [
@@ -9,6 +9,27 @@ const COLOR_LIST = [
   'bg-[#EAEAEA]',
   'bg-[#2C2C2C]',
 ];
+
+function BigCategories() {
+  const { data } = useFetch('categories/1/products', {
+    limit: MAX_LIST_LENGTH.HOME.BIG_CATEGORY,
+    offset: 0,
+  });
+  const updatedList = data?.map((item, idx) => ({
+    ...item,
+    color: COLOR_LIST[idx],
+  }));
+
+  return (
+    <section className="hidden md:block">
+      <div className="flex">
+        {updatedList.map((item, idx) => (
+          <BigCategory key={item.id} item={item} idx={idx} />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function BigCategory({ idx, item }) {
   const textColor = idx % 4 === 3 ? 'white' : 'black';
@@ -25,27 +46,6 @@ function BigCategory({ idx, item }) {
         customSize="w-2/3 h-[56px] rounded-lg"
       />
     </div>
-  );
-}
-
-function BigCategories() {
-  const { data = [] } = useFetch('categories/1/products', {
-    limit: MAX_LIST_LENGTH.HOME.BIG_CATEGORY,
-    offset: 0,
-  });
-  const updatedList = (data ?? []).map((item, idx) => ({
-    ...item,
-    color: COLOR_LIST[idx],
-  }));
-
-  return (
-    <section className="hidden md:block">
-      <div className="flex">
-        {updatedList.map((item, idx) => (
-          <BigCategory key={item.id} item={item} idx={idx} />
-        ))}
-      </div>
-    </section>
   );
 }
 

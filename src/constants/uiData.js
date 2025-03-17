@@ -1,4 +1,27 @@
-import { Twitter, FaceBook, Tiktok, Instagram } from '../assets/icons';
+import {
+  Phones,
+  PhonesB,
+  Computers,
+  SmartWatches,
+  Cameras,
+  Headphones,
+  Gaming,
+  Twitter,
+  FaceBook,
+  Tiktok,
+  Instagram,
+} from '../assets/icons';
+
+export const MAX_LIST_LENGTH = {
+  HOME: {
+    CATEGORY: 6,
+    PRODUCTS: 8,
+    BIG_CATEGORY: 4,
+  },
+  LIST: {
+    PRODUCTS: 0,
+  },
+};
 
 export const SOCIAL_ICONS = [
   { src: Twitter, alt: 'Twitter' },
@@ -30,6 +53,22 @@ export const FOOTER_MENU = [
       { id: 16, name: 'Terms of use of the site' },
     ],
   },
+];
+
+export const NAV_LIST = [
+  { name: 'Phones', src: Phones },
+  { name: 'Computers', src: Computers },
+  { name: 'Smart Watches', src: SmartWatches },
+  { name: 'Cameras', src: Cameras },
+  { name: 'Headphones', src: Headphones },
+  { name: 'Gaming', src: Gaming },
+];
+
+export const CATEGORY_LIST = [
+  { src: PhonesB, name: 'phones' },
+  { src: PhonesB, name: 'cameras' },
+  { src: PhonesB, name: 'watches' },
+  { src: PhonesB, name: 'gaming' },
 ];
 
 export const CATEGORY_MAP = {

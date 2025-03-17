@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartSlice } from '../../redux/Slice/cartSlice';
 import Button from '../Button/Button';
 
-function SideModal({ setIsOpen, title, direction = 'left' }) {
+function SideModal({ closeModal, title, direction = 'left' }) {
   const itemList = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   return (
     <section
       className="fixed inset-0 z-50 bg-black/50"
-      onClick={() => setIsOpen()}
+      onClick={() => closeModal()}
     >
       <div
         className={`fixed top-0 h-full w-64 overflow-y-scroll bg-white transition-transform duration-300 sm:w-96 ${
@@ -24,7 +24,7 @@ function SideModal({ setIsOpen, title, direction = 'left' }) {
         <button
           type="button"
           className="absolute right-6 top-6"
-          onClick={() => setIsOpen()}
+          onClick={() => closeModal()}
         >
           X
         </button>

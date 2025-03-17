@@ -15,7 +15,7 @@ function App() {
       <Header />
       {isOpen && modalType === 'side' && (
         <SideModal
-          setIsOpen={() => dispatch(modalSlice.actions.closeModal())}
+          closeModal={() => dispatch(modalSlice.actions.closeModal())}
           {...modalProps}
         />
       )}

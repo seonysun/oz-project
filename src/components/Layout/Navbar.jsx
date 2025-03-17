@@ -1,22 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Phones,
-  Computers,
-  SmartWatches,
-  Cameras,
-  Headphones,
-  Gaming,
-} from '../../assets/icons';
-
-const NAV_LIST = [
-  { name: 'Phones', src: Phones },
-  { name: 'Computers', src: Computers },
-  { name: 'Smart Watches', src: SmartWatches },
-  { name: 'Cameras', src: Cameras },
-  { name: 'Headphones', src: Headphones },
-  { name: 'Gaming', src: Gaming },
-];
+import { NAV_LIST } from '../../constants/uiData';
 
 function Nav() {
   return (

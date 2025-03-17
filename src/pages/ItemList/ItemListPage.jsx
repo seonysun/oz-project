@@ -5,8 +5,11 @@ import ProductCards from '../../components/Card/ProductCards';
 import SearchFilter from '../../components/Filter/SearchFilter';
 import DropdownInput from '../../components/Input/DropdownInput';
 import FilterInput from '../../components/Input/FilterInput';
-import { MAX_LIST_LENGTH } from '../../constants/config';
-import { CATEGORY_MAP, FILTER_LIST } from '../../constants/uiData';
+import {
+  MAX_LIST_LENGTH,
+  CATEGORY_MAP,
+  FILTER_LIST,
+} from '../../constants/uiData';
 import useFetch from '../../hooks/useFetch';
 import useResize from '../../hooks/useResize';
 

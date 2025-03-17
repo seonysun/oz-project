@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { instance } from '../utils/api/instance';
 
 const useFetch = (url, params = {}) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getData = useCallback(async () => {

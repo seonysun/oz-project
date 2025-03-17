@@ -26,7 +26,7 @@ function Button({
     <button
       type="button"
       onClick={onClick}
-      className={`flex items-center justify-around ${BTN_COLOR[color]} ${customSize || BTN_SIZE[size]}`}
+      className={`flex items-center justify-around active:bg-slate-400 ${BTN_COLOR[color]} ${customSize || BTN_SIZE[size]}`}
     >
       {text}
       {icon && (
