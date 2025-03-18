@@ -19,7 +19,7 @@ export const MAX_LIST_LENGTH = {
     BIG_CATEGORY: 4,
   },
   LIST: {
-    PRODUCTS: 0,
+    PRODUCTS: 12,
   },
 };
 
@@ -70,15 +70,6 @@ export const CATEGORY_LIST = [
   { src: PhonesB, name: 'watches' },
   { src: PhonesB, name: 'gaming' },
 ];
-
-export const CATEGORY_MAP = {
-  phones: 1,
-  computers: 2,
-  'smart watches': 3,
-  cameras: 4,
-  headphones: 5,
-  gaming: 6,
-};
 
 export const FILTER_LIST = [
   {
