@@ -1,4 +1,27 @@
-import { Twitter, FaceBook, Tiktok, Instagram } from '../assets/icons';
+import {
+  Phones,
+  PhonesB,
+  Computers,
+  SmartWatches,
+  Cameras,
+  Headphones,
+  Gaming,
+  Twitter,
+  FaceBook,
+  Tiktok,
+  Instagram,
+} from '../assets/icons';
+
+export const MAX_LIST_LENGTH = {
+  HOME: {
+    CATEGORY: 6,
+    PRODUCTS: 8,
+    BIG_CATEGORY: 4,
+  },
+  LIST: {
+    PRODUCTS: 12,
+  },
+};
 
 export const SOCIAL_ICONS = [
   { src: Twitter, alt: 'Twitter' },
@@ -32,14 +55,21 @@ export const FOOTER_MENU = [
   },
 ];
 
-export const CATEGORY_MAP = {
-  phones: 1,
-  computers: 2,
-  'smart watches': 3,
-  cameras: 4,
-  headphones: 5,
-  gaming: 6,
-};
+export const NAV_LIST = [
+  { name: 'Phones', src: Phones },
+  { name: 'Computers', src: Computers },
+  { name: 'Smart Watches', src: SmartWatches },
+  { name: 'Cameras', src: Cameras },
+  { name: 'Headphones', src: Headphones },
+  { name: 'Gaming', src: Gaming },
+];
+
+export const CATEGORY_LIST = [
+  { src: PhonesB, name: 'phones' },
+  { src: PhonesB, name: 'cameras' },
+  { src: PhonesB, name: 'watches' },
+  { src: PhonesB, name: 'gaming' },
+];
 
 export const FILTER_LIST = [
   {
