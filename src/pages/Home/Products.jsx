@@ -11,9 +11,9 @@ const MENU_ITEMS = [
 
 function Products() {
   const [selectedMenu, setSelectedMenu] = useState(MENU_ITEMS[0].name);
+  const categoryId = MENU_ITEMS.find((el) => el.name === selectedMenu)?.id;
 
-  const category = MENU_ITEMS.find((el) => el.name === selectedMenu);
-  const { data, loading } = useFetch(`categories/${category.id}/products`, {
+  const { data, loading } = useFetch(`categories/${categoryId}/products`, {
     limit: MAX_LIST_LENGTH.HOME.PRODUCTS,
     offset: 0,
   });
