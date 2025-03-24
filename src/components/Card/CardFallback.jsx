@@ -5,11 +5,11 @@ function CardFallback({ num }) {
       {Array.from({ length: num }).map((_, i) => (
         <section
           key={i}
-          className="animate-spark mb-4 flex flex-col gap-6 px-6"
+          className="mb-4 flex animate-spark flex-col gap-4 px-2"
         >
-          <div className="bg-gray-default size-56 rounded-xl" />
-          <p className="bg-gray-default h-8 rounded-lg" />
-          <p className="bg-gray-default h-8 rounded-lg" />
+          <div className="size-56 rounded-xl bg-gray-default" />
+          <p className="h-8 rounded-lg bg-gray-default" />
+          <p className="h-8 rounded-lg bg-gray-default" />
         </section>
       ))}
     </div>

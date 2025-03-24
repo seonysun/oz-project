@@ -19,7 +19,7 @@ function Products() {
   });
 
   return (
-    <section className="flex flex-col px-2 py-12 sm:px-[8%] md:px-[60px]">
+    <section className="flex flex-col px-4 py-12 sm:px-[8%] md:px-[10%]">
       <MenuTabs selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
       <ProductCards data={data} loading={loading} />
     </section>
@@ -28,7 +28,7 @@ function Products() {
 
 function MenuTabs({ selectedMenu, setSelectedMenu }) {
   return (
-    <ul className="mb-6 flex gap-7 pl-[3.5%]">
+    <ul className="mb-6 flex gap-7">
       {MENU_ITEMS.map((menu) => (
         <li key={menu.id}>
           <button
