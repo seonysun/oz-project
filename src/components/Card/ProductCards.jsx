@@ -3,7 +3,7 @@ import ProductCard from './ProductCard';
 import { MAX_LIST_LENGTH } from '../../constants/uiData';
 
 function ProductCards({ data, loading, fetching }) {
-  if (loading) return <CardFallback num={MAX_LIST_LENGTH.LIST.PRODUCTS} />;
+  if (loading) return <CardFallback num={MAX_LIST_LENGTH.HOME.PRODUCTS} />;
 
   return (
     <>
