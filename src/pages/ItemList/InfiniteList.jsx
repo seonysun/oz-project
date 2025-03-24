@@ -9,7 +9,7 @@ import productOptions from '../../utils/api/productOptions';
 function InfiniteList() {
   const isMobile = useResize();
 
-  const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
+  const { data, isLoading, hasNextPage, fetchNextPage, isFetchingNextPage } =
     useInfiniteQuery(productOptions.infiniteList());
 
   const observerRef = useIntersectionObserver({ hasNextPage, fetchNextPage });
@@ -20,7 +20,11 @@ function InfiniteList() {
         {isMobile && <FilterInput size="w-[200px]" />}
         <DropdownInput size="w-[200px]" text="By rating" />
       </div>
-      <ProductCards data={data?.pages.flat()} loading={isFetchingNextPage} />
+      <ProductCards
+        data={data?.pages.flat()}
+        loading={isLoading}
+        fetching={isFetchingNextPage}
+      />
       <div ref={observerRef} className="h-3" />
     </>
   );
