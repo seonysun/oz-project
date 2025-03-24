@@ -31,7 +31,7 @@ function ProductCard({ item }) {
         onError={(e) => {
           e.currentTarget.src = '/src/assets/images/defaultImg.png';
         }}
-        className="w-full p-5"
+        className="aspect-square object-contain p-5"
       />
       <div className="flex h-[88px] w-full flex-col justify-between text-center">
         <p className="line-clamp-2">{item.description}</p>
