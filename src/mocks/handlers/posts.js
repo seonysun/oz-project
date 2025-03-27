@@ -7,6 +7,17 @@ const postHandler = [
     await delay(1000);
     return HttpResponse.json(posts, { status: 200 });
   }),
+
+  // 조회수 증가
+  http.patch('/msw/posts/:id/views', async ({ params }) => {
+    const { id } = params;
+    const postIndex = posts.findIndex((post) => post.id === id);
+
+    posts[postIndex].views = (posts[postIndex].views || 0) + 1;
+
+    await delay(1000);
+    return HttpResponse.json(posts[postIndex], { status: 200 });
+  }),
 ];
 
 export default postHandler;
