@@ -1,0 +1,32 @@
+export const posts = [
+  {
+    id: '1',
+    title: '게시물1',
+    content: '1번 글입니다',
+    authorId: 'user1',
+    createdAt: '2025-03-25T10:00:00Z',
+    updatedAt: '2025-03-25T10:00:00Z',
+    views: 0,
+    likes: 0,
+  },
+  {
+    id: '2',
+    title: '게시물2',
+    content: '2번 글입니다',
+    authorId: 'user2',
+    createdAt: '2025-03-25T12:30:00Z',
+    updatedAt: '2025-03-25T12:30:00Z',
+    views: 0,
+    likes: 0,
+  },
+  {
+    id: '3',
+    title: '게시물3',
+    content: '3번 글입니다',
+    authorId: 'user3',
+    createdAt: '2025-03-25T12:30:00Z',
+    updatedAt: '2025-03-25T12:30:00Z',
+    views: 0,
+    likes: 0,
+  },
+];

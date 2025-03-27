@@ -7,7 +7,15 @@ import { store } from './redux/store';
 import { router } from './utils/router';
 import './main.css';
 
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = await import('./mocks/browser');
+  worker.start({
+    onUnhandledRequest: 'bypass',
+  });
+}
+
 const queryClient = new QueryClient();
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>

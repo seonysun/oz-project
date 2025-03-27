@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import { LogoBlack, Favorite, Cart, User, Burger } from '../../assets/icons';
 import useResize from '../../hooks/useResize';
@@ -10,6 +10,7 @@ function Header() {
   const isMobile = useResize();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -47,7 +48,11 @@ function Header() {
               >
                 <img src={Cart} alt="Cart" />
               </button>
-              <button type="button" key="User">
+              <button
+                type="button"
+                key="User"
+                onClick={() => navigate('/user')}
+              >
                 <img src={User} alt="User" />
               </button>
             </nav>
