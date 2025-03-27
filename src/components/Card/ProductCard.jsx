@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Like, LikeRed } from '../../assets/icons';
+import defaultImg from '../../assets/images/defaultImg.png';
 import useLazyImage from '../../hooks/useLazyImage';
 import { cartSlice } from '../../redux/Slice/cartSlice';
 import { toggleLike } from '../../redux/Slice/likeSlice';
@@ -25,11 +26,11 @@ function ProductCard({ item }) {
       </button>
       <img
         ref={imgRef}
-        src="/src/assets/images/defaultImg.png"
+        src={defaultImg}
         data-src={item.images}
         alt={item.title}
         onError={(e) => {
-          e.currentTarget.src = '/src/assets/images/defaultImg.png';
+          e.currentTarget.src = defaultImg;
         }}
         className="aspect-square object-contain p-5"
       />
