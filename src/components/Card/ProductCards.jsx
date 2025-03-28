@@ -1,22 +1,19 @@
+import CardFallback from './CardFallback';
 import ProductCard from './ProductCard';
+import { MAX_LIST_LENGTH } from '../../constants/uiData';
 
-function ProductCards({ data, loading }) {
-  if (loading) return <p>로딩중...</p>;
-  if (!data || data.length === 0)
-    return <p className="w-full text-center text-gray-500">상품이 없습니다.</p>;
+function ProductCards({ data, loading, fetching }) {
+  if (loading) return <CardFallback num={MAX_LIST_LENGTH.HOME.PRODUCTS} />;
+
   return (
-    <div className="flex flex-wrap justify-center gap-6">
-      {data.map((item) => (
-        <ProductCard
-          key={item.id}
-          src={item.images}
-          name={item.title}
-          detail={item.description}
-          price={item.price}
-          like={item.like}
-        />
-      ))}
-    </div>
+    <>
+      <div className="mb-3 flex flex-wrap gap-4">
+        {data?.map((item) => (
+          <ProductCard key={item.id} item={item} />
+        ))}
+      </div>
+      {fetching && <CardFallback num={MAX_LIST_LENGTH.LIST.PRODUCTS} />}
+    </>
   );
 }
 

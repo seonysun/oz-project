@@ -1,21 +1,16 @@
 /* eslint-disable react/no-array-index-key */
-import { ArrowLeft, ArrowRight, PhonesB } from '../../assets/icons';
+import { ArrowLeft, ArrowRight } from '../../assets/icons';
 import CategoryCard from '../../components/Card/CategoryCard';
+import { MAX_LIST_LENGTH, CATEGORY_LIST } from '../../constants/uiData';
 
 function Categories() {
-  const categoryList = [
-    { src: PhonesB, name: 'phones' },
-    { src: PhonesB, name: 'cameras' },
-    { src: PhonesB, name: 'watches' },
-    { src: PhonesB, name: 'gaming' },
+  const updatedList = [
+    ...CATEGORY_LIST,
+    ...Array.from(
+      { length: MAX_LIST_LENGTH.HOME.CATEGORY - CATEGORY_LIST.length },
+      () => ({ src: '', name: '준비중' }),
+    ),
   ];
-  const updatedList = () => {
-    const preparing = Array.from({ length: 6 - categoryList.length }, () => ({
-      src: '',
-      name: '준비중',
-    }));
-    return [...categoryList, ...preparing];
-  };
 
   return (
     <section className="bg-[#FAFAFA] px-2 py-12 sm:px-[8%] md:px-[80px]">
@@ -31,8 +26,8 @@ function Categories() {
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-6">
-        {updatedList().map((card, idx) => (
-          <CategoryCard key={idx} src={card.src} name={card.name} />
+        {updatedList.map((card, idx) => (
+          <CategoryCard key={idx} card={card} />
         ))}
       </div>
     </section>

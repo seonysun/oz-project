@@ -1,17 +1,27 @@
-import { Route, Routes } from 'react-router-dom';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
 import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
-import Homepage from './pages/Home/HomePage';
-import Listpage from './pages/ItemList/ItemListPage';
+import SideModal from './components/Layout/SideModal';
+import { modalSlice } from './redux/Slice/modalSlice';
 
 function App() {
+  const { isOpen, modalType, modalProps } = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
+
   return (
     <div className="mx-auto w-full max-w-[1440px]">
       <Header />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/list/:category" element={<Listpage />} />
-      </Routes>
+      {isOpen && modalType === 'side' && (
+        <SideModal
+          closeModal={() => dispatch(modalSlice.actions.closeModal())}
+          {...modalProps}
+        />
+      )}
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

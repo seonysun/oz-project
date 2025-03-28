@@ -6,13 +6,14 @@ function Button({
   icon = false,
   text = 'Button',
   customSize = '',
+  onClick,
 }) {
-  const colorList = {
+  const BTN_COLOR = {
     black: 'bg-black text-white',
     whiteText: 'border border-white text-white',
     blackText: 'border border-black text-black',
   };
-  const sizeList = {
+  const BTN_SIZE = {
     high: icon
       ? 'h-[56px] w-[182px] rounded-md'
       : 'h-[56px] w-[150px] rounded-md',
@@ -24,7 +25,8 @@ function Button({
   return (
     <button
       type="button"
-      className={`flex items-center justify-around ${colorList[color]} ${customSize || sizeList[size]}`}
+      onClick={onClick}
+      className={`flex items-center justify-around active:bg-slate-400 ${BTN_COLOR[color]} ${customSize || BTN_SIZE[size]}`}
     >
       {text}
       {icon && (
