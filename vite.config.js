@@ -10,7 +10,7 @@ export default defineConfig({
     include: ['msw'],
   },
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: (id) => {
