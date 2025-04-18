@@ -13,8 +13,8 @@ function Categories() {
   ];
 
   return (
-    <section className="bg-[#FAFAFA] px-2 py-12 sm:px-[8%] md:px-[80px]">
-      <div className="mb-8 flex items-center justify-between px-[5%]">
+    <section className="px-4 py-12 sm:px-[8%] md:px-[10%]">
+      <div className="mb-8 flex items-center justify-between">
         <span className="text-xl font-medium">Browse By Category</span>
         <div className="flex gap-4">
           <button type="button">
@@ -25,7 +25,7 @@ function Categories() {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-6">
+      <div className="grid grid-cols-3 justify-center gap-3 md:grid-cols-6">
         {updatedList.map((card, idx) => (
           <CategoryCard key={idx} card={card} />
         ))}

@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <div className="mx-auto w-full max-w-[1440px]">
+    <div className="mx-auto flex min-h-screen w-full max-w-[1440px] flex-col">
       <Header />
       {isOpen && modalType === 'side' && (
         <SideModal
@@ -19,7 +19,7 @@ function App() {
           {...modalProps}
         />
       )}
-      <main>
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />

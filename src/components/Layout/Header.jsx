@@ -1,16 +1,12 @@
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import HeaderNav from './HeaderNav';
+import HeaderSearchBar from './HeaderSearchBar';
 import Navbar from './Navbar';
-import { LogoBlack, Favorite, Cart, User, Burger } from '../../assets/icons';
+import { LogoBlack, Burger } from '../../assets/icons';
 import useResize from '../../hooks/useResize';
-import { modalSlice } from '../../redux/Slice/modalSlice';
-import SearchInput from '../Input/SearchInput';
 
 function Header() {
   const isMobile = useResize();
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -24,38 +20,8 @@ function Header() {
           </button>
         ) : (
           <div className="flex flex-1">
-            <div className="mx-10 flex-1">
-              <SearchInput size="h-[56px] max-w-[330px]" />
-            </div>
-            <nav className="flex gap-4">
-              <button type="button" key="Favorite">
-                <img src={Favorite} alt="Favorite" />
-              </button>
-              <button
-                type="button"
-                key="Cart"
-                onClick={() =>
-                  dispatch(
-                    modalSlice.actions.openModal({
-                      modalType: 'side',
-                      modalProps: {
-                        title: '장바구니 목록',
-                        direction: 'right',
-                      },
-                    }),
-                  )
-                }
-              >
-                <img src={Cart} alt="Cart" />
-              </button>
-              <button
-                type="button"
-                key="User"
-                onClick={() => navigate('/user')}
-              >
-                <img src={User} alt="User" />
-              </button>
-            </nav>
+            <HeaderSearchBar />
+            <HeaderNav />
           </div>
         )}
       </header>

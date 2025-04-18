@@ -71,6 +71,12 @@ export const CATEGORY_LIST = [
   { src: PhonesB, name: 'gaming' },
 ];
 
+export const MENU_ITEMS = [
+  { name: 'New Arrival', id: 2 },
+  { name: 'Bestseller', id: 3 },
+  { name: 'Featured Product', id: 4 },
+];
+
 export const FILTER_LIST = [
   {
     title: 'Brand',

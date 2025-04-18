@@ -1,18 +1,17 @@
-import CardFallback from './CardFallback';
+import ListSkeleton from './ListSkeleton';
 import ProductCard from './ProductCard';
-import { MAX_LIST_LENGTH } from '../../constants/uiData';
 
-function ProductCards({ data, loading, fetching }) {
-  if (loading) return <CardFallback num={MAX_LIST_LENGTH.HOME.PRODUCTS} />;
+function ProductCards({ data, loading, fetching, num, gridLayout }) {
+  if (loading) return <ListSkeleton num={num} size={gridLayout} />;
 
   return (
     <>
-      <div className="mb-3 flex flex-wrap gap-4">
+      <div className={`${gridLayout}`}>
         {data?.map((item) => (
           <ProductCard key={item.id} item={item} />
         ))}
       </div>
-      {fetching && <CardFallback num={MAX_LIST_LENGTH.LIST.PRODUCTS} />}
+      {fetching && <ListSkeleton num={num} size={gridLayout} />}
     </>
   );
 }
