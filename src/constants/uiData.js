@@ -101,3 +101,12 @@ export const FILTER_LIST = [
     items: [{ id: 9, name: 'Orange' }],
   },
 ];
+
+export const DEVICE = {
+  mobile: 640,
+  tablet: 768,
+  notebook_base: 1024,
+  notebook_medium: 1280,
+  desktop_base: 1440,
+  desktop_wide: 1920,
+};
