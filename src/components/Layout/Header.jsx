@@ -1,7 +1,13 @@
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from 'react-router-dom';
 import Navbar from './Navbar';
-import { LogoBlack, Favorite, Cart, User, Burger } from '../../assets/icons';
+import { LogoBlack, Cart, User, Burger } from '../../assets/icons';
 import useResize from '../../hooks/useResize';
 import { modalSlice } from '../../redux/Slice/modalSlice';
 import SearchInput from '../Input/SearchInput';
@@ -11,6 +17,26 @@ function Header() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [inputValue, setInputValue] = useState('');
+  const [, setSearchParam] = useSearchParams();
+
+  useEffect(() => {
+    if (!inputValue.trim()) return;
+
+    if (location.pathname === '/search')
+      setSearchParam({ input: inputValue.trim() });
+    else navigate(`/search?input=${inputValue.trim()}`);
+  }, [inputValue]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputValue.trim()) return;
+
+    navigate(`/search?input=${inputValue}`);
+    setInputValue('');
+  };
 
   return (
     <>
@@ -25,12 +51,14 @@ function Header() {
         ) : (
           <div className="flex flex-1">
             <div className="mx-10 flex-1">
-              <SearchInput size="h-[56px] max-w-[330px]" />
+              <SearchInput
+                size="h-[56px] max-w-[330px]"
+                value={inputValue}
+                onSubmit={handleSubmit}
+                onChange={setInputValue}
+              />
             </div>
             <nav className="flex gap-4">
-              <button type="button" key="Favorite">
-                <img src={Favorite} alt="Favorite" />
-              </button>
               <button
                 type="button"
                 key="Cart"
