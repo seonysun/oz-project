@@ -1,7 +1,9 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import defaultImg from '../../assets/images/defaultImg.png';
 import Button from '../../components/Button/Button';
 import { MAX_LIST_LENGTH } from '../../constants/uiData';
 import useFetch from '../../hooks/useFetch';
+import useLazyImage from '../../hooks/useLazyImage';
 
 const COLOR_LIST = [
   'bg-[#FFFFFF]',
@@ -34,9 +36,19 @@ function BigCategories() {
 function BigCategory({ idx, item }) {
   const textColor = idx % 4 === 3 ? 'white' : 'black';
 
+  const imgRef = useLazyImage();
+
   return (
     <div className={`w-1/4 ${item.color} flex flex-col gap-4 px-8 py-14`}>
-      <img src={item.images[1]} alt={item.category.name} />
+      <img
+        ref={imgRef}
+        src={defaultImg}
+        data-src={item.images[1]}
+        alt={item.category.name}
+        onError={(e) => {
+          e.currentTarget.src = defaultImg;
+        }}
+      />
       <p className={`text-${textColor} text-3xl font-normal`}>
         {item.category.name}
       </p>

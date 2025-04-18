@@ -15,7 +15,7 @@ function ProductCard({ item }) {
   const imgRef = useLazyImage();
 
   return (
-    <div className="flex w-[47%] flex-col items-center rounded-lg bg-[#F6F6F6] px-3 py-6 lg:w-[23%]">
+    <div className="flex flex-col items-center rounded-lg bg-[#F6F6F6] px-1 py-6 md:px-4">
       <button
         type="button"
         onClick={() => dispatch(toggleLike(item.id))}
@@ -32,7 +32,7 @@ function ProductCard({ item }) {
         onError={(e) => {
           e.currentTarget.src = defaultImg;
         }}
-        className="aspect-square object-contain p-5"
+        className="aspect-square object-contain p-3"
       />
       <div className="flex h-[88px] w-full flex-col justify-between text-center">
         <p className="line-clamp-2">{item.description}</p>
