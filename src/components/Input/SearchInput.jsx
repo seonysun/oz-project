@@ -1,3 +1,4 @@
+import Input from './Input';
 import { Search } from '../../assets/icons';
 
 function SearchInput({ size, message = 'Search', value, onChange, onSubmit }) {
@@ -9,12 +10,7 @@ function SearchInput({ size, message = 'Search', value, onChange, onSubmit }) {
       <button type="submit">
         <img src={Search} alt="search icon" />
       </button>
-      <input
-        className="w-full bg-transparent outline-none"
-        placeholder={message}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
+      <Input message={message} value={value} onChange={onChange} />
     </form>
   );
 }

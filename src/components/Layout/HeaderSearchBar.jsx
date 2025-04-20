@@ -15,7 +15,7 @@ function HeaderSearchBar() {
     if (location.pathname === '/search')
       setSearchParam({ input: inputValue.trim() });
     else navigate(`/search?input=${inputValue.trim()}`);
-  }, [inputValue]);
+  }, [inputValue, location.pathname, navigate, setSearchParam]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
