@@ -1,4 +1,4 @@
-import { Arrowdown, ArrowdownWhite } from '../../assets/icons/index';
+import Icon from '../Icon/Icon';
 
 function Button({
   color = 'black',
@@ -30,9 +30,8 @@ function Button({
     >
       {text}
       {icon && (
-        <img
-          src={color === 'blackText' ? Arrowdown : ArrowdownWhite}
-          alt="arrowdown"
+        <Icon
+          name={color === 'blackText' ? 'Arrowdown' : 'ArrowdownWhite'}
           className="size-6"
         />
       )}

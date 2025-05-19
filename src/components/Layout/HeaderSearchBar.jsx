@@ -6,6 +6,7 @@ function HeaderSearchBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // 상태 관리 하는 부분은 전부 useInput 훅으로 빼보기 inputValue, onChange
   const [inputValue, setInputValue] = useState('');
   const [, setSearchParam] = useSearchParams();
 

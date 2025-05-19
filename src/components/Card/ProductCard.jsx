@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Like, LikeRed } from '../../assets/icons';
 import defaultImg from '../../assets/images/defaultImg.png';
 import useLazyImage from '../../hooks/useLazyImage';
 import { cartSlice } from '../../redux/Slice/cartSlice';
 import { toggleLike } from '../../redux/Slice/likeSlice';
 import Button from '../Button/Button';
+import Icon from '../Icon/Icon';
 
 function ProductCard({ item }) {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function ProductCard({ item }) {
         className="flex w-full justify-end"
         aria-label="add like"
       >
-        <img src={isLike ? LikeRed : Like} alt="like" className="size-8" />
+        <Icon name={isLike ? 'LikeRed' : 'Like'} className="size-8" />
       </button>
       <img
         ref={imgRef}
